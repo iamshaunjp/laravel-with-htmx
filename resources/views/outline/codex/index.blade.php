@@ -3,6 +3,7 @@
 @section('content')
   <h1 class="page-title">Codex</h1>
 
+  @fragment('codex-list')
   <div class="codex-list content" id="codex-list">
     <div class="flex justify-between items-center mb-8">
       <h2 class="text-xl ml-2 font-bold">Codex Entries</h2>
@@ -35,6 +36,6 @@
     @if ($codexEntries->isEmpty())
       <p class="empty">No codex entries yet. Add your first character, item, or location!</p>
     @endif
-
   </div>
+  @endfragment
 @endsection
