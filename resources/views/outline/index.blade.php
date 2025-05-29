@@ -20,6 +20,8 @@
       ></div>
     </div>
 
+    <div id="swap"></div>
+
     <noscript>
       <div class="content">
         <h2 class="text-bold text-center text-4xl my-12">Start Outlining Your Novel!</h2>
