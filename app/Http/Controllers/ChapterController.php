@@ -51,7 +51,7 @@ class ChapterController extends Controller
             $chapters = Chapter::orderBy('order')->get();
 
             return view('outline.chapters.index', compact('chapters', 'isHtmx'))
-              ->fragment('chapter-list');
+              ->fragments(['chapter-list', 'modal']);
         }
 
         return redirect()->route('outline.chapters.show', $chapter);
