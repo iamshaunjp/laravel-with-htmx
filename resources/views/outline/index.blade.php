@@ -20,7 +20,9 @@
       ></div>
     </div>
 
-    <div id="swap"></div>
+    <div class="modal-container">
+      <div class="modal-content" id="modal"></div>
+    </div>
 
     <noscript>
       <div class="content">

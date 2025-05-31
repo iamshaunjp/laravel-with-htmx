@@ -3,6 +3,7 @@
 @section('content')
   <h1 class="page-title">Create a New Chapter</h1>
 
+  @fragment('chapter-create-form')
   <div class="chapter-edit-form content">
     <form 
       method="POST" 
@@ -39,5 +40,6 @@
         <button type="submit">Create Chapter</button>
       </div>
     </form>
+    @endfragment
   </div>
 @endsection

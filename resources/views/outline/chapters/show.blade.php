@@ -3,6 +3,7 @@
 @section('content')
   <h1 class="page-title">Chapter Details</h1>
 
+  @fragment('chapter-details')
   <div class="chapter-details content">
     <h2>Chapter {{ $chapter->order }}</h2>
     <h3 class="chapter-title">{{ $chapter->title }}</h3>
@@ -35,5 +36,6 @@
       </form>
     </div>
   </div>
+  @endfragment
 
 @endsection

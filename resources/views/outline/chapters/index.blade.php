@@ -10,7 +10,7 @@
       <a href="{{ route('outline.chapters.create') }}" class="btn inline-block mb-4"
         @if($isHtmx)
           hx-get="{{ route('outline.chapters.create') }}"
-          hx-target="#swap"
+          hx-target="#modal"
           hx-swap="innerHTML"
         @endif
       >
@@ -28,7 +28,7 @@
             class="chapter-title"
             @if($isHtmx)
               hx-get="{{ route('outline.chapters.show', $chapter) }}"
-              hx-target="#swap"
+              hx-target="#modal"
               hx-swap="innerHTML"
             @endif
           >{{ $chapter->title }}
