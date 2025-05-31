@@ -20,7 +20,12 @@
       ></div>
     </div>
 
-    <div class="modal-container">
+    <div class="modal-container"
+      hx-get="/modal/empty"
+      hx-target=".modal-content"
+      hx-swap="innerHTML"
+      hx-trigger="click target:.modal-container"
+    >
       <div class="modal-content" id="modal"></div>
     </div>
 

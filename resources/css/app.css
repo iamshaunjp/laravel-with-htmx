@@ -137,6 +137,6 @@ body {
   @apply block fixed top-0 left-0 w-full h-full;
   background: rgba(0,0,0,0.5);
 }
-.modal-content:has(form, .chapter-details) {
+.modal-content {
   @apply my-12 mx-auto p-12 bg-white rounded-sm max-w-200;
 }
