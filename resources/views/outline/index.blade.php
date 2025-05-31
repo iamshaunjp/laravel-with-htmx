@@ -22,7 +22,7 @@
 
     <div class="modal-container"
       hx-get="/modal/empty"
-      hx-target=".modal-content"
+      hx-target="#modal"
       hx-swap="innerHTML"
       hx-trigger="click target:.modal-container"
     >
