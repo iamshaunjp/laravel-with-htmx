@@ -20,10 +20,10 @@
     @if($isHtmx)
       <a class="btn"
         hx-delete="{{ route('outline.chapters.destroy', $chapter) }}"
-        hx-target=".chapter-list"
-        hx-swap="outerHTML"
         hx-confirm="Are you sure you want to delete this chapter?"
         hx-headers='{"X-CSRF-TOKEN": "{{ csrf_token() }}"}'
+        hx-target=".chapter-list"
+        hx-swap="outerHTML"
       >Delete Chapter</a>
     @else
       <a href="{{ route('outline.chapters.index') }}" class="btn">

@@ -30,7 +30,7 @@ class ChapterController extends Controller
         $isHtmx = $request->hasHeader('HX-Request');
 
         return view('outline.chapters.create', compact('isHtmx'))
-          ->fragmentIf($isHtmx, 'chapter-create-form');;
+          ->fragmentIf($isHtmx, 'chapter-create-form');
     }
 
     public function store(Request $request)
@@ -75,15 +75,23 @@ class ChapterController extends Controller
         return redirect()->route('outline.chapters.show', $chapter);
     }
 
-    public function destroy(Chapter $chapter)
+    public function destroy(Request $request, Chapter $chapter)
     {
+        // delete the chapter and update orders
         $deletedOrder = $chapter->order;
-
         $chapter->delete();
-
         Chapter::where('order', '>', $deletedOrder)->decrement('order');
-        
-        return redirect()->route('outline.chapters.index');
+
+        $isHtmx = $request->hasHeader('HX-Request');
+
+        if ($isHtmx) {
+            $chapters = Chapter::orderBy('order')->get();
+
+            return view('outline.chapters.index', compact('chapters', 'isHtmx'))
+              ->fragments(['chapter-list', 'modal']);
+        } else {
+            return redirect()->route('outline.chapters.index');
+        }
     }
 
 }
