@@ -9,6 +9,11 @@
       method="POST" 
       action="{{ route('outline.chapters.update', $chapter) }}"
       class="edit-form"
+      @if($isHtmx)
+        hx-put="{{ route('outline.chapters.update', $chapter) }}"
+        hx-target=".chapter-list"
+        hx-swap="outerHTML"
+      @endif
     >
       @csrf
       @method('PUT')

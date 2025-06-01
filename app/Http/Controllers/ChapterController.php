@@ -75,6 +75,15 @@ class ChapterController extends Controller
 
         $chapter->update($data);
 
+         $isHtmx = $request->hasHeader('HX-Request');
+
+        if ($isHtmx) {
+            $chapters = Chapter::orderBy('order')->get();
+
+            return view('outline.chapters.index', compact('chapters', 'isHtmx'))
+              ->fragments(['chapter-list', 'modal']);
+        }
+
         return redirect()->route('outline.chapters.show', $chapter);
     }
 
