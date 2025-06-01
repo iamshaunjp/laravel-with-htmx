@@ -57,9 +57,12 @@ class ChapterController extends Controller
         return redirect()->route('outline.chapters.show', $chapter);
     }
 
-    public function edit(Chapter $chapter)
+    public function edit(Request $request, Chapter $chapter)
     {
-        return view('outline.chapters.edit', compact('chapter'));
+        $isHtmx = $request->hasHeader('HX-Request');
+
+        return view('outline.chapters.edit', compact('chapter', 'isHtmx'))
+          ->fragmentIf($isHtmx, 'chapter-edit-form');
     }
 
     public function update(Request $request, Chapter $chapter)

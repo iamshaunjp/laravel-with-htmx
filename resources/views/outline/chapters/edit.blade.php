@@ -3,6 +3,7 @@
 @section('content')
   <h1 class="page-title">Edit Chapter</h1>
 
+  @fragment('chapter-edit-form')
   <div class="chapter-edit-form content">
     <form 
       method="POST" 
@@ -45,4 +46,5 @@
       </div>
     </form>
   </div>
+  @endfragment
 @endsection
