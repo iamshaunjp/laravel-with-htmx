@@ -21,7 +21,7 @@ class ChapterController extends Controller
     {
         $isHtmx = $request->hasHeader('HX-Request');
 
-        return view('outline.chapters.show', compact('chapter'))
+        return view('outline.chapters.show', compact('chapter', 'isHtmx'))
           ->fragmentIf($isHtmx, 'chapter-details');
     }
 
