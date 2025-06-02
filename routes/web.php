@@ -15,6 +15,7 @@ Route::get('/outline', function () {
 Route::prefix('outline')->name('outline.')->group(function () {
   Route::resource('codex', CodexController::class);
   Route::resource('chapters', ChapterController::class);
+  Route::post('chapters/reorder', [ChapterController::class, 'reorder'])->name('chapters.reorder');
 });
 
 // empty modal route

@@ -106,4 +106,19 @@ class ChapterController extends Controller
         }
     }
 
+    public function reorder(Request $request)
+    {
+        $order = $request->input('order');
+
+        foreach ($order as $index => $chapterId) {
+            Chapter::where('id', $chapterId)->update(['order' => $index + 1]);
+        }
+        
+        $chapters = Chapter::orderBy('order')->get();
+        $isHtmx = $request->hasHeader('HX-Request');
+
+        return view('outline.chapters.index', compact('chapters', 'isHtmx'))
+          ->fragment('chapter-list');
+    }
+
 }

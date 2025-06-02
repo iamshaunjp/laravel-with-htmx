@@ -58,7 +58,23 @@
         animation: 150,
         ghostClass: 'sorting',
         onEnd: function() {
-          console.log('reordered')
+          // collect id's in their new order
+          const order = Array.from(sortable.children).map(
+            child => child.getAttribute('data-id')
+          )
+
+          // convert into object
+          let values = {}
+          order.forEach((val, idx) => {
+            values[`order[${idx}]`] = val
+          })
+
+          // send to laravel
+          htmx.ajax('POST', '/outline/chapters/reorder', {
+            values: values,
+            target: '#chapter-list',
+            swap: 'outerHTML',
+          });
         }
       })
     }
