@@ -22,6 +22,9 @@
       @forelse ($chapters as $chapter)
 
       <div class="chapter" id="chapter-{{ $chapter->id }}">
+        @if($isHtmx)
+          <div class="handle">☰</div>
+        @endif
         <div class="chapter-header">
           <h2>Chapter {{ $chapter->order }}</h2>
           <a 

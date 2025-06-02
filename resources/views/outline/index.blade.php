@@ -57,6 +57,7 @@
       const sortableInstance = new Sortable(sortable, {
         animation: 150,
         ghostClass: 'sorting',
+        handle: '.handle',
         onEnd: function() {
           // collect id's in their new order
           const order = Array.from(sortable.children).map(

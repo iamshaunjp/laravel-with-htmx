@@ -145,3 +145,7 @@ body {
 .sorting {
   @apply outline-dotted outline-indigo-500 opacity-50;
 }
+
+.handle {
+  @apply absolute right-0 top-0 h-full flex items-center justify-center cursor-grab px-2 bg-gray-200;
+}
