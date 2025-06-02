@@ -18,6 +18,7 @@
       </a>
     </div>
 
+    <div class="sortable">
       @forelse ($chapters as $chapter)
 
       <div class="chapter" id="chapter-{{ $chapter->id }}">
@@ -39,9 +40,10 @@
         </div>
       </div>
 
-    @empty
-      <p class="empty">No chapters yet. Add your first one to get started!</p>
-    @endforelse
+      @empty
+        <p class="empty">No chapters yet. Add your first one to get started!</p>
+      @endforelse
+    </div> {{-- end sortable --}}
   </div>
   @endfragment
 

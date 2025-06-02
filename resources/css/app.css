@@ -140,3 +140,8 @@ body {
 .modal-content {
   @apply my-12 mx-auto p-12 bg-white rounded-sm max-w-200;
 }
+
+/* sortables */
+.sorting {
+  @apply outline-dotted outline-indigo-500 opacity-50;
+}

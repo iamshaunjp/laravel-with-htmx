@@ -44,3 +44,24 @@
     
   </div>
 @endsection
+
+@push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
+
+<script>
+  htmx.onLoad(function(content) {
+    if (content.id === "chapter-list") {
+      
+      const sortable = document.querySelector(".sortable")
+
+      const sortableInstance = new Sortable(sortable, {
+        animation: 150,
+        ghostClass: 'sorting',
+        onEnd: function() {
+          console.log('reordered')
+        }
+      })
+    }
+  })
+</script>
+@endpush
