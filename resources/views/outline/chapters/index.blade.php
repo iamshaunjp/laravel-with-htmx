@@ -21,7 +21,7 @@
     <div class="sortable">
       @forelse ($chapters as $chapter)
 
-      <div class="chapter" id="chapter-{{ $chapter->id }}">
+      <div class="chapter" id="chapter-{{ $chapter->id }}" data-id="{{ $chapter->id }}">
         @if($isHtmx)
           <div class="handle">☰</div>
         @endif
